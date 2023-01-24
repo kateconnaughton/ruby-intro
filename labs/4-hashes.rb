@@ -12,6 +12,9 @@ bitcoin_data = JSON.parse(response)
 # is the same as where this file is located and then run:
 # ruby 4-hashes.rb
 
+# Hashes are lists of key-value pairs
+
+
 # EXERCISE
 # Ask the user for the current amount of Bitcoin that they own.
 # Using the Ruby hash `bitcoin_data`, display a summary of
@@ -29,4 +32,20 @@ bitcoin = gets.chomp
 bitcoin = bitcoin.to_f
 
 # 3. inspect the bitcoin_data hash
-# puts bitcoin_data
+# puts bitcoin_data.keys
+
+# 4. store the rate in USD of bitcoin
+rate = bitcoin_data["bpi"]["USD"]["rate_float"]
+
+# 5. use that rate to calculate how much that amount is worth in USD
+value = rate * bitcoin
+puts value
+
+# 6. output the rate and value
+puts "1 Bitcoin is valued at $#{rate} USD."
+puts "Your Bitcoin is worth $#{value}."
+
+
+
+
+
